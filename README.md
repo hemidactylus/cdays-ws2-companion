@@ -44,7 +44,7 @@ WHERE   network    = 'forest-net'
   AND   date_hour  < '2020-07-07';
 
 -- Q3
-SELECT * 
+SELECT  *
 FROM    sensors_by_network
 WHERE   network = 'forest-net';
 
