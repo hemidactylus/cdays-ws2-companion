@@ -20,7 +20,8 @@ in the Web-based tool KDM:
 _Note: the instructions here come from the following source repo, which you are encouraged to checkout for more: [Application Development Workshop](https://github.com/datastaxdevs/workshop-cassandra-application-development#readme)._
 
 Create an [Astra DB instance](https://astra.datastax.com) if you haven't yet, with database=`workshops` and keyspace=`sensor_data`.
-Get a secure-connect-bundle for your database.
+Besides the Token information,
+also get a secure-connect-bundle for your database.
 
 Once your database is active,
 locate the CQL console and paste the
