@@ -17,20 +17,29 @@ in the Web-based tool KDM:
 
 ### App development
 
-_Note: the instructions here come from the following source repo, which you are encouraged to checkout for more: [Application Development Workshop](https://github.com/datastaxdevs/workshop-cassandra-application-development#readme)._
+_Note: the instructions here come from the following source repo, which you are encouraged to check out for more: [Application Development Workshop](https://github.com/datastaxdevs/workshop-cassandra-application-development#readme)._
 _**The only difference is that we automate the download of the secure-bundle using `astra-cli`. Read on for details**_
 
-Create an [Astra DB instance](https://astra.datastax.com) if you haven't yet, with database=`workshops` and keyspace=`sensor_data`.
-Besides the Token information,
-also get a secure-connect-bundle for your database.
+Create an [Astra DB instance](https://astra.datastax.com) if you haven't yet, with database=`workshops` and keyspace=`sensor_data` (please, stick to this keyspace name!).
+You will be given a DB Token: store its contents, you'll need it soon.
 
-Once your database is active,
-locate the CQL console and paste the
-contents of [this initialization script](https://raw.githubusercontent.com/datastaxdevs/workshop-cassandra-application-development/main/initialize.cql)
-(which creates and populates the required tables).
+#### Gitpod quick steps
 
-Here are some queries to run in the CQL
-console to test your data model:
+Finally, click on [this link](https://gitpod.io/#https://github.com/datastaxdevs/workshop-cassandra-application-development) (preferrably _open in new tab_)
+and get ready to launch your API! The next steps are just a barebones outline
+(pay attention to your instructors)
+
+- Authorize Gitpod single sign-on and wait for the Gitpod IDE to fully load
+- `curl -Ls "https://dtsx.io/get-astra-cli" | bash` to install the Astra CLI
+- `. ~/.bashrc ; astra setup` and enter your Astra token (`AstraCS:....`)
+- (optional) `astra db list` and `astra db list-keyspaces workshops`, `astra db get workshops` to check your DB
+- Create and populate tables: `astra db cqlsh workshops -f initialize.cql`
+- (optional) Test previous step: open cqlsh with `astra db cqlsh workshops -k sensor_data` and then run the sample queries given below
+- Download SCB: `astra db download-scb -f secure-connect-workshops.zip workshops` and then `ls *zip` to check
+- `cp .env.sample .env ; gp open .env` and replace Client ID and Client Secret from your token
+
+#### Sample queries
+
 ```
 -- Q1 (note 'all' is the only partition key in this table)
 SELECT  name, description, region, num_sensors
@@ -57,20 +66,9 @@ WHERE   sensor = 's1003'
   AND   date   = '2020-07-06';
 ```
 
-#### Gitpod quick steps
+#### Choose your path
 
-Finally, click on [this link](https://gitpod.io/#https://github.com/datastaxdevs/workshop-cassandra-application-development) (preferrably _open in new tab_)
-and get ready to launch your API! The next steps are just a barebones outline
-(pay attention to your instructors)
-
-- Authorize Gitpod single sign-on and wait for the Gitpod IDE to fully load
-- `curl -Ls "https://dtsx.io/get-astra-cli" | bash` to install the Astra CLI
-- `. ~/.bashrc ; astra setup` and enter your Astra token (`AstraCS:....`)
-- (optional) `astra db list` and `astra db list-keyspaces workshops`, `astra db get workshops` to check your DB
-- Download SCB: `astra db download-scb -f secure-connect-workshops.zip workshops` and then `ls *zip` to check
-- `cp .env.sample .env ; gp open .env` and replace Client ID and Client Secret from your token
-
-Then pick your language and continue either with [Java](https://github.com/datastaxdevs/workshop-cassandra-application-development/blob/main/java/Java_README.md) or [Python](https://github.com/datastaxdevs/workshop-cassandra-application-development/blob/main/python/Python_README.md).
+Now pick your language and continue either with [Java](https://github.com/datastaxdevs/workshop-cassandra-application-development/blob/main/java/Java_README.md) or [Python](https://github.com/datastaxdevs/workshop-cassandra-application-development/blob/main/python/Python_README.md).
 
 #### Homework and badges
 
