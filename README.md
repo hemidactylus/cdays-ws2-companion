@@ -15,6 +15,11 @@ in the Web-based tool KDM:
 2. click [here](http://kdm.kashliev.com/) to open KDM and "File / Import project..." to use the file you just downloaded.
 3. The entity-relationship diagram and the access patterns are filled for you.
 
+> Further references for you:
+> [the sensor data model interactive example](https://www.datastax.com/learn/data-modeling-by-example/sensor-data-model),
+> [a gallery of data-modeling interactive exercises](https://www.datastax.com/learn/data-modeling-by-example),
+> [the full data-modeling workshop](https://github.com/datastaxdevs/workshop-cassandra-data-modeling#readme).
+
 ### App development
 
 _Note: the instructions here come from the following source repo, which you are encouraged to check out for more: [Application Development Workshop](https://github.com/datastaxdevs/workshop-cassandra-application-development#readme)._
