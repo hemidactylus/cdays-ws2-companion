@@ -26,7 +26,8 @@ _Note: the instructions here come from the following source repo, which you are 
 _**The only difference is that we automate the download of the secure-bundle using `astra-cli`. Read on for details**_
 
 Create an [Astra DB instance](https://astra.datastax.com) if you haven't yet, with database=`workshops` and keyspace=`sensor_data` (please, stick to this keyspace name!).
-You will be given a DB Token: store its contents, you'll need it soon.
+You will be given a DB-specific Token while creating the DB: but since its permissions are not enough for us, **create a brand new DB-Administrator token**.
+(_To do so, go to your main Astra DB dashboard and click on the "..." menu on the right of your database in the DB list, then choose "Generate Token"._)
 
 #### Gitpod quick steps
 
