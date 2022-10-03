@@ -23,7 +23,7 @@ in the Web-based tool KDM:
 ### App development
 
 _Note: the instructions here come from the following source repo, which you are encouraged to check out for more: [Application Development Workshop](https://github.com/datastaxdevs/workshop-cassandra-application-development#readme)._
-_**The only difference is that we automate the download of the secure-bundle using `astra-cli`. Read on for details**_
+_**The only difference is that we automate the download of the secure-bundle using `astra-cli` and a few other steps. Read on for details**_
 
 Create an [Astra DB instance](https://astra.datastax.com) if you haven't yet, with database=`workshops` and keyspace=`sensor_data` (please, stick to this keyspace name!).
 You will be given a DB-specific Token while creating the DB: but since its permissions are not enough for us, **create a brand new DB-Administrator token**.
