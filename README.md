@@ -41,7 +41,7 @@ and get ready to launch your API! The next steps are just a barebones outline
 - (optional) `astra db list` and `astra db list-keyspaces workshops`, `astra db get workshops` to check your DB
 - Create and populate tables: `astra db cqlsh workshops -f initialize.cql`
 - (optional) Test previous step: open cqlsh with `astra db cqlsh workshops -k sensor_data` and then run the sample queries given below
-- Download SCB: `astra db download-scb -f secure-connect-workshops.zip workshops` and then `ls *zip` to check
+- (first leave the CQL console with `exit`). Download SCB: `astra db download-scb -f secure-connect-workshops.zip workshops` and then `ls *zip` to check
 - `cp .env.sample .env ; gp open .env` and replace Client ID and Client Secret from your token
 
 #### Sample queries
